@@ -1,0 +1,3 @@
+displayName = Celestial Hook
+author = BurgerMinus
+version = 0.1
