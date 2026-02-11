@@ -7,16 +7,18 @@ using Terraria.ModLoader;
 
 namespace CelestialHookMod.Items
 {
+
 	internal class StardustHook : ModItem
 	{
-		public override void SetDefaults() {
+		public override void SetDefaults() 
+		{
 			Item.CloneDefaults(ItemID.LunarHook);
 			Item.shootSpeed = 15f;
-			Item.shoot = ModContent.ProjectileType<StardustHookProjectile>(); // Makes the item shoot the hook's projectile when used.
+			Item.shoot = ModContent.ProjectileType<StardustHookProjectile>();
 		}
 
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		public override void AddRecipes() {
+		public override void AddRecipes() 
+		{
 			
 			CreateRecipe()
 				.AddIngredient(ItemID.FragmentStardust, 8)
@@ -31,24 +33,29 @@ namespace CelestialHookMod.Items
 	{
 		private static Asset<Texture2D> chainTexture;
 
-		public override void Load() { // This is called once on mod (re)load when this piece of content is being loaded.
-			// This is the path to the texture that we'll use for the hook's chain. Make sure to update it.
+		public override void Load() 
+		{ 
 			chainTexture = ModContent.Request<Texture2D>("CelestialHookMod/Items/StardustHookChain");
 		}
 
-		public override void Unload() { // This is called once on mod reload when this piece of content is being unloaded.
-			// It's currently pretty important to unload your static fields like this, to avoid having parts of your mod remain in memory when it's been unloaded.
+		public override void Unload() 
+		{ 
 			chainTexture = null;
 		}
 
-		public override void SetDefaults() {
-			Projectile.CloneDefaults(ProjectileID.StaticHook); 
+		public override void SetDefaults() 
+		{
+			Projectile.CloneDefaults(ProjectileID.LunarHookStardust); 
 			AIType = ProjectileID.StaticHook;
-		}
+            Projectile.width = 20;
+            Projectile.height = 22;
+        }
 
-		public override bool? CanUseGrapple(Player player) {
+		public override bool? CanUseGrapple(Player player) 
+		{
 			int hooksOut = 0;
-			for (int l = 0; l < 1000; l++) {
+			for (int l = 0; l < 1000; l++) 
+			{
 				if (Main.projectile[l].active && Main.projectile[l].owner == Main.myPlayer && Main.projectile[l].type == Projectile.type) {
 					hooksOut++;
 				}
@@ -57,26 +64,31 @@ namespace CelestialHookMod.Items
 			return hooksOut <= 3;
 		}
 
-		public override float GrappleRange() {
-			return 750f;
+		public override float GrappleRange() 
+		{
+			return 1000f;
 		}
 
-		public override void NumGrappleHooks(Player player, ref int numHooks) {
+		public override void NumGrappleHooks(Player player, ref int numHooks) 
+		{
 			numHooks = 3; 
 		}
 
-		public override void GrappleRetreatSpeed(Player player, ref float speed) {
+		public override void GrappleRetreatSpeed(Player player, ref float speed) 
+		{
 			speed = 24f; 
 		}
 
-		public override bool PreDrawExtras() {
+		public override bool PreDrawExtras() 
+		{
 			Vector2 playerCenter = Main.player[Projectile.owner].MountedCenter;
 			Vector2 center = Projectile.Center;
 			Vector2 directionToPlayer = playerCenter - Projectile.Center;
 			float chainRotation = directionToPlayer.ToRotation() - MathHelper.PiOver2;
 			float distanceToPlayer = directionToPlayer.Length();
 
-			while (distanceToPlayer > 20f && !float.IsNaN(distanceToPlayer)) {
+			while (distanceToPlayer > 20f && !float.IsNaN(distanceToPlayer)) 
+			{
 				directionToPlayer /= distanceToPlayer; // get unit vector
 				directionToPlayer *= chainTexture.Height(); // multiply by chain link length
 
@@ -92,7 +104,14 @@ namespace CelestialHookMod.Items
 					chainTexture.Size() * 0.5f, 1f, SpriteEffects.None, 0);
 			}
 
-			return false;
+            return false;
 		}
-	}
+
+        public override bool PreAI()
+        {
+            Lighting.AddLight(Projectile.Center, 0.3f, 0.5f, 0.6f);
+            return true;
+        }
+
+    }
 }

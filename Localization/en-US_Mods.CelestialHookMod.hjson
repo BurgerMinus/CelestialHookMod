@@ -1,0 +1,45 @@
+Keybinds: {
+	"Retract Phantasmal Hook.DisplayName": Retract  Phantasmal  Hook
+	"Switch Celestial Hook Mode.DisplayName": Switch  Celestial  Hook  Mode
+	"Recall Phantasmal Hook.DisplayName": Recall  Phantasmal  Hook
+}
+
+Items: {
+	CelestialHook: {
+		DisplayName: Celestial Hook
+		Tooltip: ""
+	}
+
+	NebulaHook: {
+		DisplayName: Nebula Hook
+		Tooltip: ""
+	}
+
+	PhantasmalHook: {
+		DisplayName: Phantasmal Hook
+		Tooltip: ""
+	}
+
+	SolarHook: {
+		DisplayName: Solar Hook
+		Tooltip: ""
+	}
+
+	StardustHook: {
+		DisplayName: Stardust Hook
+		Tooltip: ""
+	}
+
+	VortexHook: {
+		DisplayName: Vortex Hook
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	NebulaHookProjectile.DisplayName: Nebula Hook Projectile
+	PhantasmalHookProjectile.DisplayName: Phantasmal Hook Projectile
+	SolarHookProjectile.DisplayName: Solar Hook Projectile
+	StardustHookProjectile.DisplayName: Stardust Hook Projectile
+	VortexHookProjectile.DisplayName: Vortex Hook Projectile
+}

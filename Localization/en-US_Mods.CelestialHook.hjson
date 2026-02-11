@@ -36,109 +36,46 @@ Projectiles: {
 od: {
 	Items: {
 		NebulaHook: {
-			DisplayName: {
-				$parentVal: Nebula Hook
-			}
-
-			Tooltip: {
-				$parentVal: ""
-			}
+			DisplayName: Nebula Hook
+			Tooltip: ""
 		}
 
 		PhantasmalHook: {
-			DisplayName: {
-				$parentVal: Phantasmal Hook
-			}
-
-			Tooltip: {
-				$parentVal: ""
-			}
+			DisplayName: Phantasmal Hook
+			Tooltip: ""
 		}
 
 		SolarHook: {
-			DisplayName: {
-				$parentVal: Solar Hook
-			}
-
-			Tooltip: {
-				$parentVal: ""
-			}
+			DisplayName: Solar Hook
+			Tooltip: ""
 		}
 
 		StardustHook: {
-			DisplayName: {
-				$parentVal: Stardust Hook
-			}
-
-			Tooltip: {
-				$parentVal: ""
-			}
+			DisplayName: Stardust Hook
+			Tooltip: ""
 		}
 
 		VortexHook: {
-			DisplayName: {
-				$parentVal: Vortex Hook
-			}
-
-			Tooltip: {
-				$parentVal: ""
-			}
+			DisplayName: Vortex Hook
+			Tooltip: ""
 		}
 
 		CelestialHook: {
-			Tooltip: {
-				$parentVal: ""
-			}
-
-			DisplayName: {
-				$parentVal: Celestial Hook
-			}
+			Tooltip: ""
+			DisplayName: Celestial Hook
 		}
 	}
 
 	Projectiles: {
-		NebulaHookProjectile: {
-			DisplayName: {
-				$parentVal: Nebula Hook Projectile
-			}
-		}
-
-		PhantasmalHookProjectile: {
-			DisplayName: {
-				$parentVal: Phantasmal Hook Projectile
-			}
-		}
-
-		SolarHookProjectile: {
-			DisplayName: {
-				$parentVal: Solar Hook Projectile
-			}
-		}
-
-		StardustHookProjectile: {
-			DisplayName: {
-				$parentVal: Stardust Hook Projectile
-			}
-		}
-
-		VortexHookProjectile: {
-			DisplayName: {
-				$parentVal: Vortex Hook Projectile
-			}
-		}
+		NebulaHookProjectile.DisplayName: Nebula Hook Projectile
+		PhantasmalHookProjectile.DisplayName: Phantasmal Hook Projectile
+		SolarHookProjectile.DisplayName: Solar Hook Projectile
+		StardustHookProjectile.DisplayName: Stardust Hook Projectile
+		VortexHookProjectile.DisplayName: Vortex Hook Projectile
 	}
 
 	Keybinds: {
-		"Retract Phantasmal Hook": {
-			DisplayName: {
-				$parentVal: Retract  Phantasmal  Hook
-			}
-		}
-
-		"Switch Celestial Hook Mode": {
-			DisplayName: {
-				$parentVal: Switch  Celestial  Hook  Mode
-			}
-		}
+		"Retract Phantasmal Hook.DisplayName": Retract  Phantasmal  Hook
+		"Switch Celestial Hook Mode.DisplayName": Switch  Celestial  Hook  Mode
 	}
 }

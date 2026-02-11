@@ -8,7 +8,7 @@ namespace CelestialHookMod.Common
 		public static ModKeybind CelestialHookSwap { get; private set; }
 
 		public override void Load() {
-			PhantasmalHookRetract = KeybindLoader.RegisterKeybind(Mod, "Retract Phantasmal Hook", "P");
+			PhantasmalHookRetract = KeybindLoader.RegisterKeybind(Mod, "Recall Phantasmal Hook", "P");
 			CelestialHookSwap = KeybindLoader.RegisterKeybind(Mod, "Switch Celestial Hook Mode", "G");
 		}
 
